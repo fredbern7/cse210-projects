@@ -1,0 +1,1 @@
+dotnet restore cse210-student-template.sln
