@@ -1,45 +1,43 @@
 using System;
+using System.Collections.Generic;
 
 class Program {
     static void Main(string[] args) {
-        // Console.WriteLine("Hello World! This is the Exercise4 Project.");
-        List < int > numbers = new List < int > ();
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
-        // Please note we could use a do-while loop here instead
-        int userNumber = -1;
-        while (userNumber != 0) {
-            Console.Write("Enter a number (0 to quit): ");
-
-            string userResponse = Console.ReadLine();
-            userNumber = int.Parse(userResponse);
-
-            // Only add the number to the list if it is not 0
-            if (userNumber != 0) {
-                numbers.Add(userNumber);
+        List<int> numberList = new List<int>();
+        int number = -1;
+        while (number != 0)
+        {
+            Console.WriteLine("Enter number: ");
+            string userInput = Console.ReadLine();
+            number = int.Parse(userInput);
+            if (number != 0)
+            {
+                numberList.Add(number);
             }
         }
 
-        // Part 1: Compute the sum
-        int sum = 0;
-        foreach(int number in numbers) {
-            sum += number;
+        for (int i = 0; i < numberList.Count; i++)
+        {
+
+            Console.WriteLine(numberList[i]);
         }
+        
+        // The sum is:
+        Console.WriteLine($"The sum is: {numberList.Sum()}");
+        // The average is:
+        Console.WriteLine($"The average is: {numberList.Average()}");
+        // The largest number is:
+        Console.WriteLine($"The Max is: {numberList.Max()}");
 
-        Console.WriteLine($ "The sum is: {sum}");
-
-
-        float average = ((float) sum) / numbers.Count;
-        Console.WriteLine($ "The average is: {average}");
-
-        int max = numbers[0];
-
-        foreach(int number in numbers) {
-            if (number > max) {
-                // if this number is greater than the max, we have found the new max!
-                max = number;
-            }
+        //Least positive number:
+        Console.WriteLine($"Least positive number: {numberList.Min(n => n > 0 ? n : null)}");
+        // The sorted list is:
+        numberList.Sort();
+        foreach (int num in numberList)
+        {
+            Console.WriteLine(num);
         }
-
-        Console.WriteLine($"The max is: {max}");
         }
     }
