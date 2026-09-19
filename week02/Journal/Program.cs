@@ -21,6 +21,7 @@ class Program
             switch (choice)
             {
                 case "1":
+                    Console.WriteLine();
                     PromptGenerator question = new PromptGenerator();
                     string prompt = question.GetRandomPrompt();
                     Console.WriteLine(prompt);
@@ -34,7 +35,8 @@ class Program
                     journal.AddEntry(newEntry);
                     break;
                 case "2":
-                    Console.WriteLine("Display Journal");
+                    // Console.WriteLine("Display Journal");
+                    Console.WriteLine();
                     journal.DisplayAll();
                     break;
                 case "3":
@@ -45,13 +47,14 @@ class Program
                     journal.LoadFromFile(fileA);
                     break;
                 case "4":
+                    Console.WriteLine();
                     Console.Write("Enter the filename: ");
                     string name = Console.ReadLine();
                     string file = $"{name}.txt";
                     journal.SaveToFile(file);
                     break;
                 case "5":
-                    Console.WriteLine("Quit!");
+                    Console.WriteLine("Journal Closed!");
                     break;
                 default:
                     Console.WriteLine("Unknown");

@@ -32,7 +32,6 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
-        Console.WriteLine("Loading from: " + Path.GetFullPath(file));
         if (File.Exists(file))
         {
             _entries.Clear();
@@ -56,6 +55,11 @@ public class Journal
                     AddEntry(newEntry);
                 }
             }
+        }
+        else
+        {
+            Console.WriteLine("File Not Found!");
+            Console.WriteLine();
         }
     }
 }
