@@ -7,7 +7,7 @@ class Program
         DisplayWelcome();
         string userName = PromptUserName();
         int number = PromptUserNumber();
-        int squaredNumber = SquareNumber(userNumber);
+        int squaredNumber = SquareNumber(number);
         DisplayResult(userName, squaredNumber);
 
     }
@@ -37,8 +37,8 @@ class Program
         return number * number;
     }
 
-    static void DisplayResult(string userName, string squaredNumber) 
+    static void DisplayResult(string userName, int squaredNumber) 
     {
-        Console.WriteLine($"Brother {userName}, the sure of your number is {SquareNumber}");
+        Console.WriteLine($"Brother {userName}, the Square of your number is {squaredNumber}");
     }
 }
