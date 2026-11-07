@@ -27,6 +27,11 @@ class Program
         }
 
         Console.WriteLine($"The sum is: {sum}");
+
+        double average = numbers.Average();
+
+        Console.WriteLine($"Average is: {average}");
+
         int max = numbers[0];
 
         foreach (int number in numbers)
